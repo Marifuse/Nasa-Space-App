@@ -2,7 +2,7 @@
   <div class="rover">
     <main class="rover__container mt-10 grey lighten-2">
       <v-container>
-        <h1>Busqueda de Imagenes</h1>
+        <h2>Busqueda de Imagenes</h2>
         <v-text-field label='Sol' 
           color="dark"
           />
@@ -65,7 +65,7 @@
   padding: 1em;
 }
 .rover__container {
-  width: 30em;
+  width: 26em;
   text-align: center;
   margin: auto;
   padding: 3em;
