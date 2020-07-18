@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app class="grey lighten-3">
+    <v-app class="login__container">
       <v-card width='400px' class="mx-auto my-auto lighten-5">
         <v-card-title class="pb-0">
         <h1 class="mx-auto mb-5">Autentificación</h1>
@@ -57,5 +57,9 @@ export default {
 </script>
 
 <style>
-
+.login__container {
+  margin: 0;
+  background-image: url(https://apod.nasa.gov/apod/image/2007/NEOWISEBelowBigDipper-7-16-2020-TomMasterson1081.jpg) !important;
+  background-size: cover !important;
+}
 </style>
