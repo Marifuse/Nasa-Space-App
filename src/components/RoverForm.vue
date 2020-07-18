@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <main class="rover__container grey lighten-2 mt-10">
+  <div class="rover">
+    <main class="rover__container mt-10 grey lighten-2">
       <v-container>
         <h1>Busqueda de Imagenes</h1>
         <v-text-field label='Sol' 
@@ -58,6 +58,12 @@
 </script>
 
 <style>
+.rover {
+  margin: 0;
+  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg) !important;
+  background-size: cover !important;
+  padding: 1em;
+}
 .rover__container {
   width: 30em;
   text-align: center;

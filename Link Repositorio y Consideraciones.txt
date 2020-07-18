@@ -1,0 +1,8 @@
+Link Repositorio GITHUB y Algunas Consideraciones
+
+https://github.com/Marifuse/Nasa-Space-App
+
+Consideraciones:
+
+Sólo se logro lo que está a vista ya que aún me falta practicar 
+más con el tema de las API's (Igual lo intente sin mucho resultado). 
