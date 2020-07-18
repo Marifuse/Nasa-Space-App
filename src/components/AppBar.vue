@@ -35,7 +35,7 @@
           <v-list-item>
             <v-btn
               text
-              to="/admin"
+              to="/apod"
             >
               <span class="mr-1">Apod</span>
               <v-icon>mdi-chart-bubble</v-icon> 
@@ -45,7 +45,7 @@
           <v-list-item>
             <v-btn
               text
-              to="/admin"
+              to="/rover"
             >
               <span class="mr-1">Rover</span>
               <v-icon>mdi-star</v-icon> 
