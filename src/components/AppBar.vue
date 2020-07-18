@@ -7,7 +7,7 @@
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-      <a href="home" class="nav__a"><v-toolbar-title>»Nasa~Space«</v-toolbar-title></a>
+      <a href="home" class="nav__a"><v-toolbar-title>🚀Nasa~Space✨</v-toolbar-title></a>
     </v-app-bar>
 
     <v-navigation-drawer

@@ -23,8 +23,7 @@
         </v-card-text>
         <v-divider></v-divider>
         <div class="my-5 text-center">
-          <!-- <v-btn class="mx-2" color="black" dark to="/home">╠ Volver a Home ╣</v-btn> -->
-          <v-btn color='black' @click="login">╠ Login ╣</v-btn>
+          <v-btn color='black' dark @click="login">🪐 Login 🪐</v-btn>
         </div>
       </v-card>
     </v-app>
