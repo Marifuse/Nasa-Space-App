@@ -18,6 +18,12 @@
         <h2>¿Quieres conocer el Infinito y más Allá?</h2>
         <h4>Ven y descúbrelo</h4>
       </header>
+      <section>
+        <div class="text-center btn__sections">
+          <v-btn rounded color="black" dark to="/apod">🌟 Ir a Apod 🌟</v-btn>
+          <v-btn rounded color="black" dark to="/rover">🌟 Ir a Rover 🌟</v-btn>
+        </div>
+      </section>
     <Footer/>
   </div>
 </template>
@@ -58,4 +64,10 @@ export default {
 .header__container {
   background-color: #FFF;
 } 
+// Sección Botones
+.btn__sections {
+  display: flex;
+  justify-content: space-around;
+  padding: 15em;
+}
 </style>

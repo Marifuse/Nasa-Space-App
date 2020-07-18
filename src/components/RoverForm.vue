@@ -25,6 +25,9 @@
         </div>
       </v-container>
     </main>
+    <div class="text-center pa-15">
+      <v-btn class="mx-2" color="black" dark to="/home">🚀 Volver a Home 🚀</v-btn>
+    </div>
   </div>
 </template>
 
