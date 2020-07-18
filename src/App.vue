@@ -5,9 +5,9 @@
       <v-container>
         <v-row>
           <v-col cols="12" sm="10" md="8">
-          <!-- <v-overlay :value="loading">
+          <v-overlay :value="loading">
             <v-progress-circular indeterminate size="64"></v-progress-circular>
-          </v-overlay> -->
+          </v-overlay>
           </v-col>
         </v-row>
       </v-container>
@@ -18,7 +18,7 @@
 
 <script>
 import AppBar from './components/AppBar'
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
@@ -26,7 +26,7 @@ export default {
     AppBar
   },
   computed: {
-    // ...mapState(['loading'])
+    ...mapState(['loading'])
   }
 }
 </script>
