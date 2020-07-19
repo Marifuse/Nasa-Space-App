@@ -20,8 +20,8 @@
       </header>
       <section>
         <div class="text-center btn__sections">
-          <v-btn rounded color="black" dark to="/apod">🌟 Ir a Apod 🌟</v-btn>
-          <v-btn rounded color="black" dark to="/rover">🌟 Ir a Rover 🌟</v-btn>
+          <v-btn class="mr-3" rounded color="black" dark to="/apod">🌟 Ir a Apod 🌟</v-btn>
+          <v-btn class="mt-5" rounded color="black" dark to="/rover">🌟 Ir a Rover 🌟</v-btn>
         </div>
       </section>
     <Footer/>
@@ -66,8 +66,7 @@ export default {
 } 
 // Sección Botones
 .btn__sections {
-  display: flex;
-  justify-content: space-around;
-  padding: 15em;
+  padding-top: 15em;
+  padding-bottom: 15em;
 }
 </style>
