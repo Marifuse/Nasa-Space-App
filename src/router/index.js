@@ -14,9 +14,6 @@ Vue.use(VueRouter)
     path: '/home',
     name: 'home',
     component: Home, // El component llama al componente importado
-    meta: {
-      requireLogin: true // El meta tiene relación con la función guardia (se representa con una respuesta booleana)
-    }
   },
   {
     path: '/login',
@@ -29,12 +26,18 @@ Vue.use(VueRouter)
     name: 'Apod',
     component: () => import(/* webpackChunkName: "Apod" */ '../views/Apod.vue'),
     alias: ['/busqueda', '/buscar'],
+    meta: {
+      requireLogin: true // El meta tiene relación con la función guardia (se representa con una respuesta booleana)
+    }
   },
   {
     path: '/rover',
     name: 'Rover',
     component: () => import(/* webpackChunkName: "Rover" */ '../views/Rover.vue'),
     alias: ['/busqueda', '/buscar'],
+    meta: {
+      requireLogin: true // El meta tiene relación con la función guardia (se representa con una respuesta booleana)
+    }
   },
   {
     path: '*', // Este tipo de path con asterisco se usa para generar un not found o error 404
