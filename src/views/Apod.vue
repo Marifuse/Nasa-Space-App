@@ -1,5 +1,6 @@
 <template>
   <div class="text-center apod__container">
+    <apod-search/>
     <section class="text-center apod__section">
       <v-btn color="black" dark to="/home">🚀 Volver a Home 🚀</v-btn>
     </section>
@@ -7,8 +8,11 @@
 </template>
 
 <script>
+import ApodSearch from '../components/ApodSearch'
 export default {
-
+  components: {
+    ApodSearch
+  }
 }
 </script>
 
