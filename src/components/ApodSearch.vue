@@ -1,38 +1,52 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-date-picker v-model="picker" color="grey darken-3" full-width :landscape="$vuetify.breakpoint.smAndUp" 
-      class="mt-10 mb-5"></v-date-picker>
+      <v-date-picker v-model="date" v-bind:max="today" 
+      color="grey darken-3" full-width :landscape="$vuetify.breakpoint.smAndUp" 
+      class="mt-10 mb-5" @click:date="getInfo"></v-date-picker>
     </v-row>
-    <v-btn color="black" dark>✨ Buscar ✨</v-btn>
+    <section>
+      <v-col cols="6" class="mx-auto">
+        <v-card class="mx-auto" max-width="400">
+          <v-img
+            v-if="apod.media_type == 'image'"
+            class="white--text align-end"
+            height="200px"
+            :src="apod.url"
+          >
+            <v-card-title>{{ apod.title }}</v-card-title>
+          </v-img>
+          <iframe v-else width="320" height="240" :src="apod.url"></iframe>
+          <v-card-subtitle class="pb-0">{{ apod.date }}</v-card-subtitle>
+          <v-card-text class="text--primary">
+            <div>{{ apod.explanation }}</div>
+          </v-card-text>
+          <v-card-actions> </v-card-actions>
+        </v-card>
+      </v-col>
+    </section>
+    <!-- <v-btn color="black" dark>✨ Buscar ✨</v-btn> -->
   </v-container>
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
   name:'ApodSearch',
-  data() { 
-    return { 
-      date: '', 
-      title: '', 
-      explanation: '', 
-      url: '',
-      picker: new Date().toISOString().substr(0, 10), 
-    } 
-  },
-  methods:{
-    apod() {
-      // console.log('holis es una prueba')
-      fetch(`https://api.nasa.gov/planetary/apod?api_key=aI8KxRMNGl4gFxrsdb2WJEoiXSytEeBNesxZLCyL`)
-      .then(response => response.json())
-      .then(data => console.log(data))
-    }
+  data() {
+    return {
+      today: new Date().toISOString().substr(0, 10),
+      date: new Date().toISOString().substr(0, 10)
+    };
   },
   computed: {
-  
+    ...mapState(["apod"])
   },
-  created() {
-    this.apod()
-  },
-}
+  methods: {
+    ...mapActions(["getApod"]),
+    getInfo() {
+      this.getApod(this.date);
+    }
+  }
+};
 </script>

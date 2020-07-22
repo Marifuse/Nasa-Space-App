@@ -3,21 +3,18 @@
     <section class="text-center">
       <v-card class="pa-5 grey lighten-3 mb-15 mx-auto" width="30em">
         <h1 class="text-center mb-5">Busqueda de Imagenes</h1>
-          <v-text-field label="Sol" type="text" outlined color="grey lighten-1"/>
-          <v-row align="center">
-            <v-subheader>Rover</v-subheader>
-              <v-select
-                v-model="select"
-                :hint="`${select.item}`"
-                :items="items"
-                item-text="item"
-                label="Select"
-                persistent-hint
-                return-object
-                single-line
-                color="dark"
-              ></v-select>
-          </v-row>
+          <v-text-field label="Sol" type="number" outlined color="grey lighten-1"/>
+          <v-select
+            v-model="Rover"
+            :hint="`${select.item}`"
+            :items="items"
+            item-text="item"
+            label="Select"
+            persistent-hint
+            return-object
+            single-line
+            color="dark"
+          ></v-select>
           <div class="text-center pa-3">
             <v-btn color='black' dark @click="search">🪐 Buscar 🪐</v-btn>
           </div> 

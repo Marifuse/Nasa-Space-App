@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-app class="login__container">
-      <v-card width='400px' class="mx-auto my-auto lighten-5">
+    <v-img :src="apod.url" min-height="100%">  
+      <v-card width='400px' class="mx-auto my-auto lighten-5 pa-5 mt-16">
         <v-card-title class="pb-0">
         <h1 class="mx-auto mb-5">Autentificación</h1>
         </v-card-title>
@@ -26,21 +26,24 @@
           <v-btn color='black' dark @click="login">🪐 Login 🪐</v-btn>
         </div>
       </v-card>
-    </v-app>
+    </v-img>
   </div> 
 </template>
 
 <script>
 import Firebase from 'firebase'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
   data: () => ({
     user: '',
     password: '',
     showPassword: false
   }),
+  computed: {
+    ...mapState(["apod"])
+  },
   methods: {
-    ...mapActions(['setCurrentUser']),
+    ...mapActions(['setCurrentUser', 'getApod']),
     login() {
       Firebase.auth().signInWithEmailAndPassword(this.user, this.password)
       .then(() => {
@@ -53,13 +56,12 @@ export default {
       })
     }
   },
+  created() {
+    this.getApod();
+  }
 }
 </script>
 
 <style>
-.login__container {
-  margin: 0;
-  background-image: url(https://apod.nasa.gov/apod/image/2007/NEOWISEBelowBigDipper-7-16-2020-TomMasterson1081.jpg) !important;
-  background-size: cover !important;
-}
+
 </style>

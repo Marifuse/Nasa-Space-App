@@ -2,7 +2,7 @@
   <div class="text-center apod__container">
     <apod-search/>
     <section class="text-center apod__section">
-      <v-btn color="black" dark to="/home">🚀 Volver a Home 🚀</v-btn>
+      <v-btn color="dark" dark to="/home">🚀 Volver a Home 🚀</v-btn>
     </section>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   background-size: cover !important;
 }
 .apod__section {
-  margin-top: 20em;
-  margin-bottom: 15em;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 </style>
