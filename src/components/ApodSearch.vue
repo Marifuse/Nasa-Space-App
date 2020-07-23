@@ -6,7 +6,7 @@
       class="mt-10 mb-5" @click:date="getInfo"></v-date-picker>
     </v-row>
     <section>
-      <v-col cols="6" class="mx-auto">
+      <v-col cols="6" xs="12" sm="12" class="mx-auto">
         <v-card class="mx-auto" max-width="400">
           <v-img
             v-if="apod.media_type == 'image'"
@@ -21,7 +21,6 @@
           <v-card-text class="text--primary">
             <div>{{ apod.explanation }}</div>
           </v-card-text>
-          <v-card-actions> </v-card-actions>
         </v-card>
       </v-col>
     </section>
@@ -30,9 +29,11 @@
 </template>
 
 <script>
+// import VIframe from '../index.vue'
 import { mapActions, mapState } from "vuex";
 export default {
   name:'ApodSearch',
+  // components: { VIframe },
   data() {
     return {
       today: new Date().toISOString().substr(0, 10),

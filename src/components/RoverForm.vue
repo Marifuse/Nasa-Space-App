@@ -3,20 +3,13 @@
     <section class="text-center">
       <v-card class="pa-5 grey lighten-3 mb-15 mx-auto" width="30em">
         <h1 class="text-center mb-5">Busqueda de Imagenes</h1>
-          <v-text-field label="Sol" type="number" outlined color="grey lighten-1"/>
-          <v-select
-            v-model="Rover"
-            :hint="`${select.item}`"
-            :items="items"
-            item-text="item"
-            label="Select"
-            persistent-hint
-            return-object
-            single-line
-            color="dark"
+          <v-text-field :value="roverSearch.sol" @input="updateSol" label="Sol" type="number" outlined color="grey lighten-1"/>
+          <v-select :value="roverSearch.rover" @input="updateName" cols='12' md="6" v-model="roverSelected" :items="rovers" label="Rover" color="grey lighten-1"
+          ></v-select>
+          <v-select :value="roverSearch.camera" @input="updateCamera" cols='12' md="6" v-model="cameraSelected" :items="cameras" label="Cámaras" color="grey lighten-1"
           ></v-select>
           <div class="text-center pa-3">
-            <v-btn color='black' dark @click="search">🪐 Buscar 🪐</v-btn>
+            <v-btn color='black' dark @click="searchRover">🪐 Buscar 🪐</v-btn>
           </div> 
       </v-card>
       <div class="text-center pa-15">
@@ -27,27 +20,37 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
   export default {
-    data () {
-      return {
-        select: { item: 'Options'},
-        items: [
-          { item: 'Curiosity'},
-          { item: 'Opportunity'},
-          { item: 'Spirit'},
-        ],
+    data: () => ({
+      cameras: ['Todas','FHAZ','RHAZ','MAST','CHECKCAM','MAHLI','MARDI','NAVCAM','PANCAM','MINITES'],
+      rovers: ['Curiosity', 'Spirit', 'Opportunity'],
+      cameraSelected: null,
+      roverSelected: null,
+      rules: [
+        v => !!v || '* Este campo es obligatorio',
+        v => !isNaN(parseFloat(v)) || '* Debes ingresar un valor numérico'
+      ],
+      // Alert
+      alert: {
+        text: "",
+        state: false,
       }
-    },
+    }),
+    computed: mapState(['roverSearch']),
     methods: {
-    search() {
-      let date = this.sol.date
-      fetch(`${date}`)
-      .then(response => response.json())
-      .then(response => this.sol = response)
-      }
+      searchRover(){
+        if(this.roverSearch.sol!=null && this.roverSearch.rover!=''){
+          this.getRover()
+        } else{
+          this.alert.state = true
+          this.alert.text = "Los campo SOL y Rover son obligatorios."
+        }
+      },
+      ...mapActions(['updateSol','updateCamera','updateName','getRover'])
     },
     created() {
-      this.search()
+      
     },
   }
 </script>
