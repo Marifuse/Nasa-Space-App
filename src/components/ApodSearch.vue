@@ -19,7 +19,7 @@
               :src="apod.url"
             >
             </v-img>
-            <iframe v-else width="320" height="240" :src="apod.url"></iframe>
+            <iframe class="responsive-iframe" v-else width="350" height="250" :src="apod.url"></iframe>
             <h2 class="text-center">{{ apod.title }}</h2>
             <v-card-subtitle class="pb-5">{{ apod.date }}</v-card-subtitle>
             <v-card-text class="text--primary">
@@ -56,3 +56,16 @@ export default {
   }
 };
 </script>
+
+<style>
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+</style>

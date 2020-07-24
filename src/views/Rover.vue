@@ -1,21 +1,18 @@
 <template>
   <div>
     <rover-form/>
-    <!-- <rover-result/> -->
+    <rover-card/>
   </div>
 </template>
 
 <script>
 import RoverForm from '../components/RoverForm'
-// import RoverResult from '../components/RoverResult'
+import RoverCard from '../components/RoverCard'
 export default {
   components: {
     RoverForm,
-    // RoverResult
+    RoverCard
   }
 }
 </script>
 
-<style>
-
-</style>

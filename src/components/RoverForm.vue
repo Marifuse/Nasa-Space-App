@@ -3,32 +3,51 @@
     <section class="text-center">
       <v-card class="pa-5 grey lighten-3 mb-15 mx-auto" width="30em">
         <h1 class="text-center mb-5">Busqueda de Imagenes</h1>
-          <v-text-field label="Sol" type="number" outlined color="grey lighten-1"/>
-          <v-select :items="rovers" label="Rover" color="grey lighten-1"
-          ></v-select>
-          <v-select :items="cameras" label="Cámaras" color="grey lighten-1"
+          <v-text-field label="Sol" v-model="sol" type="number" outlined color="grey lighten-1"/>
+          <v-select :items="rovers" v-model="rover" label="Rover" color="grey lighten-1"
           ></v-select>
           <div class="text-center pa-3">
-            <v-btn color='black' dark>🪐 Buscar 🪐</v-btn>
+            <v-btn color='black' dark @click="getRoverInfo">🪐 Buscar 🪐</v-btn>
           </div> 
+      </v-card> 
+    </section>
+    <section>
+      <v-card class="mx-auto grey lighten-3" width="30em">
+        <div class="text-center mb-10" v-if="cameras">
+          <h2>Cantidad de fotos por Camaras</h2>
+          <div v-for="(count, camera) in camerasCount" :key="camera">
+            {{ camera }} : {{ count }}
+          </div>
+        </div>
       </v-card>
-      <div class="text-center pa-15">
-        <v-btn color="black" dark to="/home">🚀 Volver a Home 🚀</v-btn>
-      </div>  
     </section>
   </div> 
 </template>
 
 <script>
-// import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
   export default {
     data: () => ({
-      cameras: ['Todas','FHAZ','RHAZ','MAST','CHECKCAM','MAHLI','MARDI','NAVCAM','PANCAM','MINITES'],
+      sol: '1000',
+      rover: 'Curiosity',
       rovers: ['Curiosity', 'Spirit', 'Opportunity'],
     }),
-    methods: {
+     computed: {
+      ...mapGetters(["cameras"]),
+      camerasCount() {
+        let summary = {};
+        this.cameras.map(camera => {
+          summary[camera] = (summary[camera] || 0) + 1;
+        });
+        return summary;
+      }
     },
-    created() {
+    methods: {
+      ...mapActions(["getRoverData"]),
+      getRoverInfo() {
+        const payload = { sol: this.sol, rover: this.rover };
+        this.getRoverData(payload);
+      }
     },
   }
 </script>
@@ -36,7 +55,7 @@
 <style>
 .rover {
   margin: 0;
-  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg) !important;
+  background-image: url(https://apod.nasa.gov/apod/image/2007/SGUNeuschwansteinNeowiseIMG2532-1920.jpg) !important;
   background-size: cover !important;
   padding-top: 3em;
   padding-bottom: 1em;
