@@ -1,5 +1,6 @@
 <template>
   <div class="rover">
+    <!-- Formulario -->
     <section class="text-center">
       <v-card class="pa-5 grey lighten-3 mb-15 mx-auto" width="30em">
         <h1 class="text-center mb-5">Busqueda de Imagenes</h1>
@@ -11,6 +12,7 @@
           </div> 
       </v-card> 
     </section>
+    <!-- Sección de las Camaras -->
     <section>
       <v-card class="mx-auto grey lighten-3" width="30em">
         <div class="text-center mb-10" v-if="cameras">

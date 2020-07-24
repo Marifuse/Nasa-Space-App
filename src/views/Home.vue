@@ -1,23 +1,26 @@
 <template>
   <div class="home home__container">
-      <v-carousel
-        continuous
-        cycle
-        class="pt-2"
-      >
-        <v-carousel-item
-          v-for="(item,i) in items"
-          :key="i"
-          :src="item.src"
-          reverse-transition="fade-transition"
-          transition="fade-transition"
-        ></v-carousel-item>
+    <!-- Sección Carousel -->
+    <v-carousel
+      continuous
+      cycle
+      class="pt-2"
+    >
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="item.src"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
+      ></v-carousel-item>
       </v-carousel>
+      <!-- Cabecera -->
       <header class="text-center header__container">
         <h1>⭐Nasa~Space⭐</h1>
         <h2>¿Quieres conocer el Infinito y más Allá?</h2>
         <h4>Ven y descúbrelo</h4>
       </header>
+      <!-- Sección botones -->
       <section>
         <div class="text-center btn__sections">
           <v-btn class="mr-3" rounded color="black" dark to="/apod">🌟 Ir a Apod 🌟</v-btn>

@@ -1,5 +1,6 @@
 <template>
   <div class="grey lighten-3">
+    <!-- Sección de las cards -->
     <v-container>
       <h1 class="text-center mt-5 mb-5" id="title__card">Galería</h1>
       <v-row>

@@ -1,10 +1,12 @@
 <template>
   <v-container>
+    <!-- Calendario -->
     <v-row justify="center">
       <v-date-picker v-model="date" v-bind:max="today" 
       color="grey darken-3" full-width :landscape="$vuetify.breakpoint.smAndUp" 
       class="mt-10 mb-5" @click:date="getInfo"></v-date-picker>
     </v-row>
+    <!-- Sección carta con el resultado del calendario -->
     <section>
       <v-col cols="12" xs="12" sm="12" class="mx-auto">
         <v-hover
@@ -29,16 +31,13 @@
         </v-hover>  
       </v-col>
     </section>
-    <!-- <v-btn color="black" dark>✨ Buscar ✨</v-btn> -->
   </v-container>
 </template>
 
 <script>
-// import VIframe from '../index.vue'
 import { mapActions, mapState } from "vuex";
 export default {
   name:'ApodSearch',
-  // components: { VIframe },
   data() {
     return {
       today: new Date().toISOString().substr(0, 10),
