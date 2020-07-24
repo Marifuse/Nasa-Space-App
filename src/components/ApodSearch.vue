@@ -45,10 +45,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(["apod"])
+    ...mapState(['apod'])
   },
   methods: {
-    ...mapActions(["getApod"]),
+    ...mapActions(['getApod']),
     getInfo() {
       this.getApod(this.date);
     }

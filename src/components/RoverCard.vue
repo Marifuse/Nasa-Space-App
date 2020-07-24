@@ -38,10 +38,10 @@
 import { mapActions, mapState } from 'vuex'
   export default {
      computed: {
-      ...mapState(["roverData"]),
+      ...mapState(['roverData']),
     },
     methods: {
-      ...mapActions(["getRoverData"]),
+      ...mapActions(['getRoverData']),
     },
   }
 </script>

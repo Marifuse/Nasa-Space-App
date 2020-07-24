@@ -40,7 +40,7 @@ export default {
     showPassword: false
   }),
   computed: {
-    ...mapState(["apod"])
+    ...mapState(['apod'])
   },
   methods: {
     ...mapActions(['setCurrentUser', 'getApod']),

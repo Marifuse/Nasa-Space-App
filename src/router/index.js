@@ -25,7 +25,7 @@ Vue.use(VueRouter)
     path: '/apod',
     name: 'Apod',
     component: () => import(/* webpackChunkName: "Apod" */ '../views/Apod.vue'),
-    alias: ['/busqueda', '/buscar'],
+    alias: ['/calendario', '/buscar'],
     meta: {
       requireLogin: true // El meta tiene relación con la función guardia (se representa con una respuesta booleana)
     }
@@ -34,7 +34,7 @@ Vue.use(VueRouter)
     path: '/rover',
     name: 'Rover',
     component: () => import(/* webpackChunkName: "Rover" */ '../views/Rover.vue'),
-    alias: ['/busqueda', '/buscar'],
+    alias: ['/camaras', '/fotos'],
     meta: {
       requireLogin: true // El meta tiene relación con la función guardia (se representa con una respuesta booleana)
     }

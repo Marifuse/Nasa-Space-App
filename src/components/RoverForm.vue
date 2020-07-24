@@ -35,7 +35,7 @@ import { mapActions, mapGetters } from 'vuex'
       rovers: ['Curiosity', 'Spirit', 'Opportunity'],
     }),
      computed: {
-      ...mapGetters(["cameras"]),
+      ...mapGetters(['cameras']),
       camerasCount() {
         let summary = {};
         this.cameras.map(camera => {
@@ -45,7 +45,7 @@ import { mapActions, mapGetters } from 'vuex'
       }
     },
     methods: {
-      ...mapActions(["getRoverData"]),
+      ...mapActions(['getRoverData']),
       getRoverInfo() {
         const payload = { sol: this.sol, rover: this.rover };
         this.getRoverData(payload);
