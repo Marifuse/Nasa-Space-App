@@ -21,7 +21,7 @@
         <h4>Ven y descúbrelo</h4>
       </header>
       <!-- Sección botones -->
-      <section>
+      <section class="btn__container">
         <div class="text-center btn__sections">
           <v-btn class="mr-3" rounded color="black" dark to="/apod">🌟 Ir a Apod 🌟</v-btn>
           <v-btn class="mt-5" rounded color="black" dark to="/rover">🌟 Ir a Rover 🌟</v-btn>
@@ -49,7 +49,16 @@ export default {
         },
         {
           src: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/146000/146996/iss063e039892_lrg.jpg',
-        }
+        },
+        {
+          src: 'https://www.nasa.gov/sites/default/files/thumbnails/image/s69-40758.jpg',
+        },
+        {
+          src: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/3_iss057e055409.jpg',
+        },
+        {
+          src: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss058e013234.jpg',
+        },
       ],
     }
   },
@@ -61,13 +70,20 @@ export default {
 </script>
 
 <style lang="scss">
+// Sección principal
 .home__container {
   background-color: gainsboro;
 }
+// Sección cabecera
 .header__container {
   background-color: #FFF;
 } 
 // Sección Botones
+.btn__container {
+  margin: 0;
+  background-image: url(https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/iss057e111453_lrg.jpg) !important;
+  background-size: cover !important;
+}
 .btn__sections {
   padding-top: 15em;
   padding-bottom: 15em;

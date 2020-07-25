@@ -2,7 +2,7 @@
   <div class="not__found">
     <img class="error__404" src="error-404.png" alt="error-404">
     <div class="text-center btn__nf">
-      <v-btn rounded color="grey" to="/login">🌟 Volver a Login 🌟</v-btn>
+      <v-btn rounded color="grey" to="/home">🌟 Volver a Home 🌟</v-btn>
     </div>
   </div>
 </template>
@@ -18,12 +18,12 @@ export default {
   background-color: #000;
 }
 .error__404 {
-  width: 30em;
+  width: 20em;
   display: block;
   margin: auto;
   margin-top: 3em;
 }
 .btn__nf {
-  margin-bottom: 8.5em;
+  margin-bottom: 16em;
 }
 </style>
