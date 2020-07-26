@@ -8,11 +8,8 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
     name: 'home',
+    alias: ['/home', '/casa'],
     component: Home, // El component llama al componente importado
   },
   {
