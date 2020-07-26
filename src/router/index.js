@@ -9,7 +9,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'home',
-    alias: ['/home', '/casa'],
+    alias: ['/home', '/casa', '/nasahome'],
     component: Home, // El component llama al componente importado
   },
   {
