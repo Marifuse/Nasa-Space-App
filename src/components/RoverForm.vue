@@ -1,7 +1,9 @@
 <template>
-  <div class="rover">
+  <div class="rover__container">
     <!-- Formulario -->
     <section class="text-center">
+      <h1 class="mt-5 rover__title">Rover Mars</h1>
+      <h3 class="mb-10 rover__title">✨Ven y observa fotografías de Marte✨</h3>
       <v-card class="pa-5 grey lighten-3 mb-15 mx-auto" width="30em">
         <h1 class="text-center mb-5">Busqueda de Imagenes</h1>
           <v-text-field label="Sol" v-model="sol" type="number" outlined color="grey lighten-1"/>
@@ -55,11 +57,14 @@ import { mapActions, mapGetters } from 'vuex'
 </script>
 
 <style>
-.rover {
+.rover__container {
   margin: 0;
   background-image: url(https://apod.nasa.gov/apod/image/2007/SGUNeuschwansteinNeowiseIMG2532-1920.jpg) !important;
   background-size: cover !important;
   padding-top: 3em;
   padding-bottom: 1em;
+}
+.rover__title {
+  color: #FFF
 }
 </style>
